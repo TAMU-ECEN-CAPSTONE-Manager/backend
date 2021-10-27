@@ -1,24 +1,25 @@
-# README
+## Backend and frontend for ECEN Capstone
+This repo is meant for the backend and frontend implementation for the ECEN Capstone Application. The backend framework is on ruby and the front-end has support for both ERB and React. Environment and deployment information is provided below.
+## Environment Information
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ - **Ruby:** ruby 2.6.6p146
+ - **Rails:** 6.1.4.1
+ - **SQLite:** 3.22.0
 
-Things you may want to cover:
+## How to Deploy
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+ - When running for the first time
 
-* Database creation
+		rvm install "ruby-2.6.6"
+		gem install bundler:2.2.27
+		bundle install
+    
 
-* Database initialization
+ - After the initial setup is done
+	
+		rake db:create
+    	rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Note:** Make Sure that if you are deploying in Cloud9 uncomment Line 74 in /backend/config/environments/development.rb and add the custom Cloud9 URL.
