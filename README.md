@@ -22,4 +22,4 @@ This repo is meant for the backend and frontend implementation for the ECEN Caps
 		rake db:create
     	rails s
 
-**Note:** Make Sure that if you are deploying in Cloud9 uncomment Line 74 in /backend/config/environments/development.rb and add the custom Cloud9 URL.
+**Note:** Make Sure that if you are deploying in Cloud9 change Line 74 in /backend/config/environments/development.rb and add your custom Cloud9 URL.
