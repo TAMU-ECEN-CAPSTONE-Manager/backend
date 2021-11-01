@@ -23,5 +23,5 @@ This repo is meant for the backend and frontend implementation for the ECEN Caps
     	rails s
 
 **Note:** 
-	- Make Sure that if you are deploying in Cloud9 change Line 74 in /backend/config/environments/development.rb and add your custom Cloud9 URL.
-	- Also use Ubuntu 18.04 instead of Amazon Linux while spawining a new Cloud9 instance.
+ - Make Sure that if you are deploying in Cloud9 change Line 74 in /backend/config/environments/development.rb and add your custom Cloud9 URL.
+ - Also use Ubuntu 18.04 instead of Amazon Linux while spawining a new Cloud9 instance.
