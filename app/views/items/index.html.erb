@@ -1,2 +1,23 @@
 <h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>In Inventory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.category %></td>
+        <td><%= i.quantity %></td>
+        <td><%= i.inInventory %></td>
+        <td><%= i.description%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

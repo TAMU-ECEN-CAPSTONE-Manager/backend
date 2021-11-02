@@ -11,11 +11,11 @@
 
   <body>
     <h1>TAMU ECEN CAPSTONE MANAGER</h1>
-    <h4>MANAGEMENT SITE FOR ECEN CAPSTONE DESIGN</h4>
     <div class="links">
       <button><%= link_to 'WELCOME' , root_path , class: "btn"%></button>
       <button><%= link_to 'ABOUT' , welcome_about_path, class: "btn" %></button>
       <button><%= link_to 'STUDENT HOME', welcome_studenthome_path , class: 'btn' %></button>
+      <button><%= link_to 'Inventory Management' , items_path, class: 'btn' %></button>
     </div>
     <%= yield %>
     <hr>
