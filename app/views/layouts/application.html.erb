@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Backend</title>
+    <title>TAMU ECEN Capstone</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,8 +10,15 @@
   </head>
 
   <body>
-    <%= link_to 'Welcome' , root_path %>
-    <%= link_to 'About' , welcome_about_path %>
+    <h1>TAMU ECEN CAPSTONE MANAGER</h1>
+    <h4>MANAGEMENT SITE FOR ECEN CAPSTONE DESIGN</h4>
+    <div class="links">
+      <button><%= link_to 'WELCOME' , root_path , class: "btn"%></button>
+      <button><%= link_to 'ABOUT' , welcome_about_path, class: "btn" %></button>
+      <button><%= link_to 'STUDENT HOME', welcome_studenthome_path , class: 'btn' %></button>
+    </div>
     <%= yield %>
+    <hr>
+    <h4>TAMU ECEN Capstone Manager | Copyrights Reserved</h4>
   </body>
 </html>
