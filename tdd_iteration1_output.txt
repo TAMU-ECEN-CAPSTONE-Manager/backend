@@ -1,0 +1,26 @@
+
+WelcomeController
+  Home Page
+    contains title
+    checks about page
+    checks studenthome page
+
+ItemsController
+  Inventory Management Page
+    Inventory displays all elements in order of database entry
+    Update a new item to inventory page if item not present
+
+Item
+  add some examples to (or delete) /home/ubuntu/environment/test/backend/spec/models/item_spec.rb (PENDING: Not yet implemented)
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Item add some examples to (or delete) /home/ubuntu/environment/test/backend/spec/models/item_spec.rb
+     # Not yet implemented
+     # ./spec/models/item_spec.rb:4
+
+1 deprecation warning total
+
+Finished in 0.21535 seconds (files took 1.77 seconds to load)
+6 examples, 0 failures, 1 pending
+
