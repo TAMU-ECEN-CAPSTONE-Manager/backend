@@ -1,0 +1,31 @@
+<h1>Inventory</h1>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th id="name_header">Name</th>
+      <th id="category_header">Category</th>
+      <th id="quantity_header">Quantity</th>
+      <th id="inInventory_header">In Inventory</th>
+      <th id="description_header">Description</th>
+      <th id="show_header">List in Inventory</th>
+      <th id="modify_header">Modify</th>
+      <th id="delete_header">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.category %></td>
+        <td><%= i.quantity %></td>
+        <td><%= i.inInventory %></td>
+	      <td><%= i.description%></td>
+        <td><%= link_to 'Show Inventory' , item_path(i) %></td>
+	      <td><%= button_to 'Edit', edit_item_path(i), method: 'get' %></td>
+	      <td><%= button_to 'Remove', item_path(i), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add a New Item", new_item_path %>
