@@ -1,2 +1,9 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h1>Create an Item</h1>
+<%= form_with model: @items do |i| %>
+  <%= i.text_field :name, placeholder: "name" %>
+  <%= i.text_field :category, placeholder: "category" %>
+  <%= i.text_field :quantity, placeholder: "quantity" %>
+  <%= i.text_field :inInventory, placeholder: "inInventory" %>
+  <%= i.text_field :description, placeholder: "description" %>
+  <%= i.submit %>
+<% end %>

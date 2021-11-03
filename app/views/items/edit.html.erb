@@ -1,2 +1,9 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h1>Update Item Details</h1>
+<%= form_for @item, :class => 'update_class', :method => :PUT do |i| %>
+  <%= i.text_field :name, placeholder: "name" %>
+  <%= i.text_field :category, placeholder: "category" %>
+  <%= i.text_field :quantity, placeholder: "quantity" %>
+  <%= i.text_field :inInventory, placeholder: "inInventory" %>
+  <%= i.text_field :description, placeholder: "description" %>
+  <%= i.submit %>
+<% end %>

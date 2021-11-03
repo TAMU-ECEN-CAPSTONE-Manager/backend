@@ -1,2 +1,3 @@
 <h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<%= @item.name %> in category "<%= @item.category %>" total = <%= @item.quantity %>, in inventory = <%= @item.inInventory %>, product description -- "<%= @item.description %><br/>
+<%= link_to 'Remove', @items, method: :delete, data: { confirm: 'Are you sure?' } %>
