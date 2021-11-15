@@ -1,0 +1,14 @@
+<html>
+  <h1>Return Items</h1>
+  <h3>How many items you want to return?</h3>
+  <body>
+    <%= form_for @item, :method => :GET, url: returning_item_path(@item) do |i| %>
+      <div>
+        <p><label for="quantity">Total Items of this type: </label><%=  i.text_field :quantity, placeholder: "quantity", name: "quantity", id: "quantity" %></p>
+        <p><label for="inInventory">Total Items in inventory: </label><%=  i.text_field :inInventory, placeholder: "inInventory", name: "inInventory", id: "inInventory" %></p>
+        <p><label for="return">No. of items to return: </label><input type="text" name="return" id="return" /></p>
+        <p><%= i.submit %></p>
+      </div>
+    <% end %>
+  </body>
+</html>

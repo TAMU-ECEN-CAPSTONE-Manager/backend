@@ -10,6 +10,8 @@
       <th id="show_header">List in Inventory</th>
       <th id="modify_header">Modify</th>
       <th id="delete_header">Delete</th>
+      <th id="issue_header">Issue</th>
+      <th id="return_header">Return</th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +25,8 @@
         <td><%= link_to 'Show Inventory' , item_path(i) %></td>
 	      <td><%= button_to 'Edit', edit_item_path(i), method: 'get' %></td>
 	      <td><%= button_to 'Remove', item_path(i), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Issue', issue_item_path(i), method: 'get' %></td>
+        <td><%= button_to 'Return', return_item_path(i), method: 'get' %></td>
       </tr>
     <% end %>
   </tbody>

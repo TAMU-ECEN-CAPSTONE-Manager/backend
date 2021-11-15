@@ -1,0 +1,13 @@
+<html>
+  <h1>Issue Item</h1>
+  <h3>How many items you want to issue?<h3>
+  <body>
+    <%= form_for @item, :method => :GET, url: checkout_item_path(@item) do |i| %> 
+      <div> 
+        <p><label for="total">Items in Inventory: </label><%= i.text_field :inInventory, placeholder: "inInventory", name: "total", id: "total" %></p>
+        <p><label for="checkout">No. of items to checkout: </label><input type="text" name="checkout" id="checkout" /></p>
+        <p><%= i.submit %></p>
+      </div>
+    <% end %>
+  </body>
+</html>
