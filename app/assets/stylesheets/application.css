@@ -94,3 +94,33 @@
   width:      50px;
   height:     50px;
 }
+
+
+@media screen and (max-width: 700px) {
+  body {
+    text-align: center;
+    background-color: gray;
+    margin: 0px 20px;
+  }
+  .links {
+  background-color: white;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-radius: 5px;
+  height: 80px;
+  margin-bottom: 20px;
+ }
+ #back {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.arrow{
+  width:      30px;
+  height:     30px;
+}
+iframe {
+  border-radius: 5px;
+  width: 250px;
+ }
+}
