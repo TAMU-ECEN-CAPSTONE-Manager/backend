@@ -7,4 +7,7 @@ class WelcomeController < ApplicationController
   
   def studenthome
   end
+  
+  def sponsorprojectsubmission
+  end
 end

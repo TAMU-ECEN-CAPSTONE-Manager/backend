@@ -15,10 +15,16 @@
       <button><%= link_to 'WELCOME' , root_path , class: "btn"%></button>
       <button><%= link_to 'ABOUT' , welcome_about_path, class: "btn" %></button>
       <button><%= link_to 'STUDENT HOME', welcome_studenthome_path , class: 'btn' %></button>
-      <button><%= link_to 'Inventory Management' , items_path, class: 'btn' %></button>
+      <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>
+      <button><%= link_to 'INVENTORY MANAGEMENT' , items_path, class: 'btn' %></button>
     </div>
     <%= yield %>
     <hr>
+    <span id="back">
+      <a href="">
+        <%= image_tag asset_path('arrow.jpg'), data: {"turbolinks"=>false}, class: "arrow" %>
+      </a>
+    </span>
     <h4>TAMU ECEN Capstone Manager | Copyrights Reserved</h4>
   </body>
 </html>
