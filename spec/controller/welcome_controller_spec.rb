@@ -18,5 +18,10 @@ require 'rails_helper'
 	            expect(response).to be_successful
 	            expect(response.body).to include("Authentication")
 	        end
+	        it 'checks sponsorprojectsubmission page' do
+	            get :sponsorprojectsubmission
+	            expect(response).to be_successful
+	            expect(response.body).to include("Sponsor Project Submission")
+	        end
 	    end
 	end
