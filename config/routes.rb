@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/about'
   get 'welcome/studenthome'
+  get 'welcome/sponsorprojectsubmission'
   resources :items
   get '/items/:id', to: 'items#show'
   
