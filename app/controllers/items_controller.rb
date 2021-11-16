@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
     checkout = vars['checkout'].to_i
     if checkout > total
       flash[:error] = "#{@item.name} is not possible to do. More number of items requested for checkout, than actually available in inventory"
-      redirect_to issue_item_path(@item)
+      redirect_to issue_item_path(@item) and return
     end
     @item.update(:inInventory => total - checkout)
     redirect_to item_path(@item)
@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
     returning = vars['return'].to_i
     if returning + inventory > total
       flash[:error] = "#{@item.name} exceeds the total number of items of this type, return exact number of items"
-      redirect_to issue_return_item_path(@item)
+      redirect_to return_item_path(@item) and return
     end
     @item.update(:inInventory => returning + inventory)
     redirect_to item_path(@item)
