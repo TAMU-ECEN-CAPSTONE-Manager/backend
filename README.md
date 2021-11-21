@@ -21,6 +21,20 @@ This repo is meant for the backend and frontend implementation for the ECEN Caps
 	
 		rake db:create
     	rails s
+## New deployment steps 
+
+ - Install Docker Desktop software https://www.docker.com/products/docker-desktop
+ - Navigate to backend/build directory
+ - Run the below command to start the local deployment. Navigate to http://localhost:3000 to check your deployment
+ 
+ 		docker compose up -d
+ - To stop the deployment:
+		
+		docker compose down
+ - To check the logs of the deployment use:
+ 
+		docker compose logs
+ - This deployment has an inbuilt postgres and pgadmin installed. PgAdmin is exposed on port 5050.
 
 **Note:** 
  - Make Sure that if you are deploying in Cloud9 change Line 74 in /backend/config/environments/development.rb and add your custom Cloud9 URL.
