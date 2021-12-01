@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/about'
   get 'welcome/studenthome'
   get 'welcome/sponsorprojectsubmission'
+  get 'welcome/inventorymanagement'
   resources :items
   get '/items/:id', to: 'items#show'
   get '/items/:id/issue', to: 'items#issue', as: 'issue_item'

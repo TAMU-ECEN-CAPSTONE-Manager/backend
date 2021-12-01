@@ -1,0 +1,5 @@
+<h1>Inventory Management</h1>
+<h2>Welcome to inventory management. Are you a student or TA/Professor/Admin</h2>
+<h2>Select the appropriate view</h2>
+<button><%= link_to 'Admin Mode' , items_path(:student => 'false'), class: 'btn' %></button>
+<button><%= link_to 'Student Mode', items_path(:student => 'true'), class: 'btn' %></button>
