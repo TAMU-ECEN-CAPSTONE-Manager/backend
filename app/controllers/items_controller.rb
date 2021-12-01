@@ -5,8 +5,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @isStudent = params['student']
   end
-
+  
   def show
   end
 
@@ -90,7 +91,7 @@ class ItemsController < ApplicationController
   end
 
   def current_item
-    id = params[:id] 
+    id = params[:id]
     @item = Item.find(id)
   end
 
