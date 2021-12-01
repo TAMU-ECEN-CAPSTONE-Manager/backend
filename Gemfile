@@ -63,3 +63,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# OAuth
+gem 'omniauth-oauth2', '~> 1.7.1'
+# OmniAuth CSRF protection
+gem 'omniauth-rails_csrf_protection', '~> 1.0.0'
+# REST calls to Microsoft Graph
+gem 'httparty', '~> 0.18.1'
+# Session storage in database
+gem 'activerecord-session_store', '~> 2.0.0'

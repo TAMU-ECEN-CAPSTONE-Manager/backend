@@ -17,6 +17,7 @@
       <button><%= link_to 'STUDENT HOME', welcome_studenthome_path , class: 'btn' %></button>
       <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>
       <button><%= link_to 'INVENTORY MANAGEMENT' , items_path, class: 'btn' %></button>
+      <button><%= link_to "Sign In", "/auth/microsoft_graph_auth", method: :post, class: "nav-link" %></button>
     </div>
     <%= yield %>
     <hr>
@@ -26,5 +27,6 @@
       </a>
     </span>
     <h4>TAMU ECEN Capstone Manager | Copyrights Reserved</h4>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
