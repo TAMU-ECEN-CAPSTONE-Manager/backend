@@ -17,7 +17,14 @@
       <button><%= link_to 'STUDENT HOME', welcome_studenthome_path , class: 'btn' %></button>
       <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>
       <button><%= link_to 'INVENTORY', welcome_inventorymanagement_path, class: 'btn' %></button>
-      <button><%= link_to "Sign In", "/auth/microsoft_graph_auth", method: :post, class: "nav-link" %></button>
+      
+      <% if @user_name %>
+        <button><%= link_to "Sign Out", {:controller => :auth, :action => :signout}, class: 'btn' %></button>
+        <h4>Welcome <%= @user_name %>!</h4>
+      <% else %>
+        <button><%= link_to "Sign In", "/auth/microsoft_graph_auth", method: :post, class: 'btn' %></button>
+      <% end %>
+      
     </div>
     <%= yield %>
     <hr>
