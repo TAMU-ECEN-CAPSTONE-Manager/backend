@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @isStudent = params['student']
+    email = session[:user_email]
+    @isAdmin = Admin.exists?(:email => email)
   end
   
   def show
