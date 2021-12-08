@@ -1,5 +1,5 @@
 <h1>Inventory</h1>
-<% if @isStudent == 'false' %>
+<% if @isAdmin %>
   <h2>Welcome to the Admin View</h2>
 <% else %>
   <h2>Welcome to the Student View</h2>
@@ -13,7 +13,7 @@
       <th id="inInventory_header">In Inventory</th>
       <th id="description_header">Description</th>
       <th id="show_header">List in Inventory</th>
-      <% if @isStudent == 'false' %>
+      <% if @isAdmin %>
         <th id="modify_header">Modify</th>
         <th id="delete_header">Delete</th>
         <th id="issue_header">Issue</th>
@@ -30,7 +30,7 @@
         <td><%= i.inInventory %></td>
 	      <td><%= i.description%></td>
         <td><%= link_to 'Show Inventory' , item_path(i) %></td>
-        <% if @isStudent == 'false' %>
+        <% if @isAdmin %>
 	        <td><%= button_to 'Edit', edit_item_path(i), method: 'get' %></td>
 	        <td><%= button_to 'Remove', item_path(i), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
           <td><%= button_to 'Issue', issue_item_path(i), method: 'get' %></td>
@@ -41,6 +41,6 @@
   </tbody>
 </table>
 
-<% if @isStudent == 'false' %>
+<% if @isAdmin %>
   <%= link_to "Add a New Item", new_item_path %>
 <% end %>

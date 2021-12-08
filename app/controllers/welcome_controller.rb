@@ -10,4 +10,7 @@ class WelcomeController < ApplicationController
   
   def sponsorprojectsubmission
   end
+
+  def inventorymanagement
+  end
 end
