@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'requestinvs/index'
+  get 'requestinvs/show'
+  get 'requestinvs/new'
   get 'welcome/about'
   get 'welcome/studenthome'
   get 'welcome/sponsorprojectsubmission'
@@ -9,6 +12,8 @@ Rails.application.routes.draw do
   get '/items/:id/checkout', to: 'items#checkout', as: 'checkout_item'
   get '/items/:id/return', to: 'items#return', as: 'return_item'
   get '/items/:id/returning', to: 'items#returning', as: 'returning_item'
+  resources :requestinvs
+  get '/requestinvs/:id', to: 'requestinvs#show'
   match '/auth/:provider/callback', :to => 'auth#callback', :via => [:get, :post]
   get 'auth/signout'
   get 'auth/failure'

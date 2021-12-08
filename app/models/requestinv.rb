@@ -1,0 +1,2 @@
+class Requestinv < ApplicationRecord
+end

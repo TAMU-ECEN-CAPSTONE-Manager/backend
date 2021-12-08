@@ -1,0 +1,4 @@
+<h1>Request <%= @requestinv.name %> Description</h1>
+<h2>Item Name:</h2><%= @requestinv.name %><h2> Number of items to be issued</h2><%= @requestinv.number %><h2> Issuer email</h2><%= @requestinv.email %><br><br>
+<%= link_to 'Issue the item', items_path%>
+<%= link_to 'Remove Request', @requestinvs, method: :delete, data: { confirm: 'Are you sure?' } %>

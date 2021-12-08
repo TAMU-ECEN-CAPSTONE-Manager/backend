@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_162429) do
+ActiveRecord::Schema.define(version: 2021_12_08_210056) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2021_12_07_162429) do
     t.integer "quantity"
     t.integer "inInventory"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "requestinvs", force: :cascade do |t|
+    t.string "name"
+    t.string "number"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

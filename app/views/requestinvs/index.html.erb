@@ -1,0 +1,21 @@
+<h1>Requests</h1>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th id="name_header">Name</th>
+      <th id="number_header">Quantity to Issue</th>
+      <th id="email_header">Email</th>
+      <th id="show_header">List the Request</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requestinvs.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.number %></td>
+        <td><%= i.email %></td>
+        <td><%= link_to 'Take Action on the request' , requestinv_path(i) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
