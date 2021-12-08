@@ -10,7 +10,8 @@ class AuthController < ApplicationController
 
     def signout
         reset_session
-        redirect_to root_url
+        session.clear
+        redirect_to "https://login.microsoftonline.com/common/oauth2/v2.0/logout?post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A3000"
     end
 
     def failure
