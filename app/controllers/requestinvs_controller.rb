@@ -31,6 +31,8 @@ class RequestinvsController < ApplicationController
 
   def current_request
     id = params[:id]
-    @requestinv = Requestinv.find(id)
+    if id != "borrowed"
+      @requestinv = Requestinv.find(id)
+    end
   end
 end

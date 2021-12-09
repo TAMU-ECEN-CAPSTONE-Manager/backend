@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'requestinvs/index'
   get 'requestinvs/show'
   get 'requestinvs/new'
+  get 'requestinvs/borrowed'
   get 'welcome/about'
   get 'welcome/studenthome'
   get 'welcome/sponsorprojectsubmission'
