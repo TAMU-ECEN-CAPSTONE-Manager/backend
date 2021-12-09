@@ -23,6 +23,10 @@ class RequestinvsController < ApplicationController
     redirect_to requestinvs_index_path
   end
 
+  def borrowed
+    @requestinvs = Requestinv.where(:email => session[:user_email])
+  end
+
   private
 
   def requestinv_params
