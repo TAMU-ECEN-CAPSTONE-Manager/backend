@@ -1,6 +1,6 @@
 <%= form_with model: @requestinv do |form| %>
   <%= form.text_field :name, placeholder: "name" %>
   <%= form.text_field :number, placeholder: "number" %>
-  <%= form.text_field :email, placeholder: "email" %>
+  <%= form.text_field :email, :value => session[:user_email] , placeholder: "email" %>
   <%= form.submit %>
 <% end %>
