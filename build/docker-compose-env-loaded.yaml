@@ -45,6 +45,12 @@ services:
             - APP_DB_PASS=password
         depends_on:
           - postgres
+    mlengine:
+      image: vaidhyesh/capstone-ml
+      container_name: ml_container
+      restart: unless-stopped
+      depends_on:
+        - web
 volumes:
   local_pgdata:
   pgadmin-data:

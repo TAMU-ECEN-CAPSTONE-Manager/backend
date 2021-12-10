@@ -33,6 +33,12 @@ services:
         - pgadmin-data:/var/lib/pgadmin
       depends_on:
         - postgres
+    mlengine:
+      image: vaidhyesh/capstone-ml
+      container_name: ml_container
+      restart: unless-stopped
+      depends_on:
+        - web
     web:
         build: ../
         container_name: backendapp
