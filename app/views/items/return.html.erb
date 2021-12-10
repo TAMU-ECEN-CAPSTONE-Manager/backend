@@ -1,3 +1,4 @@
+<% if @user_email != nil %>
 <html>
   <h1>Return Items</h1>
   <h3>How many items you want to return?</h3>
@@ -12,3 +13,8 @@
     <% end %>
   </body>
 </html>
+<% end %>
+
+<% if @user_email == nil %>
+    <h1>SIGN IN!</h1>
+<% end %>

@@ -57,10 +57,6 @@ group :test do
   gem 'database_cleaner'
 end
 
-group :production do
-  gem 'pg'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -72,3 +68,5 @@ gem 'omniauth-rails_csrf_protection', '~> 1.0.0'
 gem 'httparty', '~> 0.18.1'
 # Session storage in database
 gem 'activerecord-session_store', '~> 2.0.0'
+
+gem 'rest-client', '~> 2.1'
