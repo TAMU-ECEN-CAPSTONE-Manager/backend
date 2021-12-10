@@ -1,3 +1,4 @@
+<% if @user_email != nil %>
 <h1>Create an Item</h1>
 <%= form_with model: @items do |i| %>
   <%= i.text_field :name, placeholder: "name" %>
@@ -6,4 +7,9 @@
   <%= i.text_field :inInventory, placeholder: "inInventory" %>
   <%= i.text_area :description, placeholder: "description" %>
   <%= i.submit %>
+<% end %>
+<% end %>
+
+<% if @user_email == nil %>
+    <h1>SIGN IN!</h1>
 <% end %>

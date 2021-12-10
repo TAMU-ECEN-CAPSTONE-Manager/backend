@@ -1,4 +1,5 @@
 <h1>Inventory</h1>
+<% if @user_email != nil %>
 <% if @isAdmin %>
   <h2>Welcome to the Admin View</h2>
 <% else %>
@@ -51,4 +52,18 @@
 <% else %>
   <button><%= link_to 'REQUEST AN INVENTORY', requestinvs_new_path, class: 'btn' %></button>
   <button><%= link_to 'CHECK YOUR REQUESTS', requestinvs_borrowed_path, class: 'btn' %></button>
+<% end %>
+
+<% if @isAdmin %>
+    <h4> PROJECT RECOMMENDATIONS </h4>
+    <p>Enter a Project number</p>
+    <form accept-charset="UTF-8" action="/items" method="get">
+      <input id="q" name="q" type="text" />
+      <input name="commit" type="submit" value="Search" />
+    </form>
+    <%= @results %>
+<% end %>
+
+<% else %>
+  <h1>SIGN IN!</h1>
 <% end %>
