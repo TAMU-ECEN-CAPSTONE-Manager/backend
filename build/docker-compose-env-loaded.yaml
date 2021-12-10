@@ -9,12 +9,12 @@ services:
           interval: 10s
           retries: 10
         environment:
-          - POSTGRES_USER=$POSTGRES_USER
-          - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-          - POSTGRES_DB=$POSTGRES_DB_NAME
-          - APP_DB_USER=$APP_DB_USER
-          - APP_DB_PASS=$APP_DB_PASS
-          - APP_DB_NAME=$APP_DB_NAME
+          - POSTGRES_USER=root
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_DB=deployment
+          - APP_DB_USER=technoobs
+          - APP_DB_PASS=password
+          - APP_DB_NAME=production
         # ports:
         #   - "5432:5432"
         volumes:
@@ -35,14 +35,14 @@ services:
         image: vaidhyesh/ecen-capstone-backend
         container_name: backendapp
         ports:
-            - 3000:3000
+            - 80:3000
         environment:
-            - DB_SERVER=$DB_SERVER
-            - SECRET_KEY_BASE=$SECRET_KEY_BASE
-            - POSTGRES_PORT=$POSTGRES_PORT
-            - APP_DB_USER=$APP_DB_USER
-            - APP_DB_NAME=$APP_DB_NAME
-            - APP_DB_PASS=$APP_DB_PASS
+            - DB_SERVER=postgres
+            - SECRET_KEY_BASE=06267e61829d574f7698dd038d689f28dc498b9088312a4064771bf4340ce3ccc32198c71f18565508a2deee13d56eda9ed287de3870910196e0b2580c5d44e2
+            - POSTGRES_PORT=5432
+            - APP_DB_USER=technoobs
+            - APP_DB_NAME=production
+            - APP_DB_PASS=password
         depends_on:
           - postgres
 volumes:

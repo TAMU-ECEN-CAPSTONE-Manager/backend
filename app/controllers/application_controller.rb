@@ -4,8 +4,8 @@ require 'oauth2'
 
 class ApplicationController < ActionController::Base
 
+  skip_before_action :verify_authenticity_token
   before_action :set_user
-
   def set_user
     @user_name = user_name
     @user_email = user_email
