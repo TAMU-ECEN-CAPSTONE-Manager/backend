@@ -15,13 +15,8 @@
       <button><%= link_to 'WELCOME' , root_path , class: "btn"%></button>
       <button><%= link_to 'ABOUT' , welcome_about_path, class: "btn" %></button>
       <button><%= link_to 'STUDENT PROJECT SUBMISSION', welcome_studenthome_path , class: 'btn' %></button>
-      <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>
-      <% if @isAdmin %>
-        <button><%= link_to 'INVENTORY/PROJECT RECOMMENDATIONS', items_path, class: 'btn' %></button>
-      <% else %>
-        <button><%= link_to 'STUDENT INVENTORY', items_path, class: 'btn' %></button>
-      <% end %>
-
+      <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>     
+      <button><%= link_to 'INVENTORY and PROJECT MANAGEMENT', items_path, class: 'btn' %></button>
       <% if @user_name %>
         <button><%= link_to "Sign Out", {:controller => :auth, :action => :signout}, class: 'btn' %></button>
         <h4>Welcome <%= @user_email %>!</h4>
