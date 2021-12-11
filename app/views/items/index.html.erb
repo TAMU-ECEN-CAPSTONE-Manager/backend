@@ -61,8 +61,12 @@
       <input id="q" name="q" type="text" />
       <input name="commit" type="submit" value="Search" />
     </form>
-    <% if @showResults%>
-      <%= @res.body %>
+     <% if @showResults%>
+
+    <% @res.each do |item|%>
+      <p><%= item %></p>     
+    <% end %> 
+      
     <% end %>  
 <% end %>
 

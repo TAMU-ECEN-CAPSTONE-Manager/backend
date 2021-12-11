@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @user_name = user_name
     @user_email = user_email
   end
+  
   def save_in_session(auth_hash)
     # Save the token info
     session[:graph_token_hash] = auth_hash[:credentials]

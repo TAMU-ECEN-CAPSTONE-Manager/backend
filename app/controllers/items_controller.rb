@@ -10,13 +10,27 @@ class ItemsController < ApplicationController
     @isAdmin = Admin.exists?(:email => email)
     vars = request.query_parameters
     @projectid = vars['q']
-    @res = results(@projectid)
-    @showResults = @projectid != nil && @projectid != '' && @res !=nil && @res.code == 200
+
+    if @projectid != nil
+      response = results(@projectid)
+      responseParsed = JSON.parse(response.body)
+      @res = JSON.parse(responseParsed["projects"])
+    end
+    @showResults = @projectid != nil && @projectid != '' && @res !=nil && @res != "null"
+
+    #@showResults = true
   end
   
   def results(projectid)
-        #res = HTTParty.post("http://localhost:6666/getProjects", body: {projectid: projectid})
-        res = HTTParty.get("https://google.com")
+        res = nil
+        begin
+          res = HTTParty.post("http://localhost:6666/getProjects", body: {"TeamNo": projectid.to_i}.to_json, :headers => {
+            'Content-Type' => 'application/json'}, timeout: 180)
+        rescue Net::ReadTimeout
+          res.body = 'Timeout'
+          res.code = 500
+        end
+        #res = HTTParty.get("https://google.com")
         # uri = URI('http://0.0.0.0:5000/projectList')
         # #uri.query = URI.encode_www_form(params)
         # res = Net::HTTP.post_form(uri, :projectid=>projectid) 
