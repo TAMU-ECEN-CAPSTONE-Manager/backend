@@ -49,6 +49,8 @@ services:
       image: vaidhyesh/capstone-ml
       container_name: ml_container
       restart: unless-stopped
+      ports:
+        - 6666:5000
       depends_on:
         - web
 volumes:

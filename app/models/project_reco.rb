@@ -1,0 +1,3 @@
+class ProjectReco < ApplicationRecord
+    
+end
