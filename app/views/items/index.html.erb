@@ -55,13 +55,15 @@
 <% end %>
 
 <% if @isAdmin %>
-    <h4> PROJECT RECOMMENDATIONS </h4>
+    <h1> Project Recommendations </h1>
     <p>Enter a Project number</p>
     <form accept-charset="UTF-8" action="/items" method="get">
       <input id="q" name="q" type="text" />
       <input name="commit" type="submit" value="Search" />
     </form>
-    <%= @results %>
+    <% if @showResults%>
+      <%= @res.body %>
+    <% end %>  
 <% end %>
 
 <% else %>

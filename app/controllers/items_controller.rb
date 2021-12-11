@@ -2,13 +2,27 @@ class ItemsController < ApplicationController
   before_action :current_item, only: [:show, :edit, :update, :destroy]
   before_action :issue_item, only: [:issue, :checkout]
   before_action :return_item, only: [:return, :returning]
+  require 'httparty'
 
   def index
     @items = Item.all
     email = session[:user_email]
     @isAdmin = Admin.exists?(:email => email)
+    vars = request.query_parameters
+    @projectid = vars['q']
+    @res = results(@projectid)
+    @showResults = @projectid != nil && @projectid != '' && @res !=nil && @res.code == 200
   end
   
+  def results(projectid)
+        #res = HTTParty.post("http://localhost:6666/getProjects", body: {projectid: projectid})
+        res = HTTParty.get("https://google.com")
+        # uri = URI('http://0.0.0.0:5000/projectList')
+        # #uri.query = URI.encode_www_form(params)
+        # res = Net::HTTP.post_form(uri, :projectid=>projectid) 
+        return res
+  end
+
   def show
   end
 
@@ -93,7 +107,11 @@ class ItemsController < ApplicationController
 
   def current_item
     id = params[:id]
-    @item = Item.find(id)
+    if Item.exists?(id: id)
+      @item = Item.find(id)
+    else
+      redirect_to root_path
+    end
   end
 
 end
