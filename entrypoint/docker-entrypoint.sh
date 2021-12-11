@@ -8,4 +8,5 @@ fi
 
 rails generate active_record:session_migration
 rake db:migrate
+rake db:seed
 rails server -e production
