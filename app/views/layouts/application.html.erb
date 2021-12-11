@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <h1>TAMU ECEN CAPSTONE MANAGER</h1>
+    <div class="header">
+      <h1>TAMU ECEN CAPSTONE MANAGER</h1>
+    </div>  
     <div class="links">
       <button><%= link_to 'WELCOME' , root_path , class: "btn"%></button>
       <button><%= link_to 'ABOUT' , welcome_about_path, class: "btn" %></button>
@@ -25,14 +27,17 @@
       <% end %>
       
     </div>
-    <%= yield %>
-    <hr>
+    <div class= "yield">
+      <%= yield %>
+    </div> 
     <span id="back">
       <a href="">
-        <%= image_tag asset_path('arrow.jpg'), data: {"turbolinks"=>false}, class: "arrow" %>
+        <%= image_tag asset_path('back-to-top.jpeg'), data: {"turbolinks"=>false}, class: "arrow" %>
       </a>
     </span>
-    <h4>TAMU ECEN Capstone Manager | Copyrights Reserved</h4>
+    <div class="footer">      
+      <h4>COPYRIGHTS RESERVED &copy;</h4>
+    </div> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
