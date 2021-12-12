@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   def results(projectid)
         res = nil
         begin
-          res = HTTParty.post("http://localhost:6666/getProjects", body: {"TeamNo": projectid.to_i}.to_json, :headers => {
+          res = HTTParty.post("http://mlengine:5000/getProjects", body: {"TeamNo": projectid.to_i}.to_json, :headers => {
             'Content-Type' => 'application/json'}, timeout: 180)
         rescue Net::ReadTimeout
           res.body = 'Timeout'
