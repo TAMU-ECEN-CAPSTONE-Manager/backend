@@ -8,6 +8,10 @@ class Api::V1::FormresponsesController < ApplicationController
         if header_value != ENV["AUTH_TOKEN_API"]
             render plain: { error: 'Invalid Auth Token' }.to_json, status: 400, content_type: 'application/json'
         else
+            @studentExisting = Formresponse.where(:tamu_email => student_params[:tamu_email])
+            if @studentExisting != nil
+                render plain: @studentExisting.to_json, content_type: 'application/json' and return
+            end
             @student = Formresponse.new(student_params)
             if @student.save
                 render plain: @student.to_json, content_type: 'application/json'
