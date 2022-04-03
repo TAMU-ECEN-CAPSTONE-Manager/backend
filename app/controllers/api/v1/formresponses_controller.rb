@@ -9,7 +9,7 @@ class Api::V1::FormresponsesController < ApplicationController
             render plain: { error: 'Invalid Auth Token' }.to_json, status: 400, content_type: 'application/json'
         else
             @studentExisting = Formresponse.where(:tamu_email => student_params[:tamu_email])
-            if @studentExisting != nil
+            if @studentExisting.exists?
                 render plain: @studentExisting.to_json, content_type: 'application/json' and return
             end
             @student = Formresponse.new(student_params)
