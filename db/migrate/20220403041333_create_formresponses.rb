@@ -1,7 +1,6 @@
 class CreateFormresponses < ActiveRecord::Migration[6.1]
   def change
     create_table :formresponses do |t|
-      t.string :form_submission_time
       t.string :full_name
       t.string :uin
       t.string :tamu_email

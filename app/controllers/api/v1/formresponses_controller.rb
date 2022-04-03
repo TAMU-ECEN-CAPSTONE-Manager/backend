@@ -18,6 +18,6 @@ class Api::V1::FormresponsesController < ApplicationController
     end
 
     def student_params
-        params.require(:formresponse).permit(:tamu_email,:form_submission_time,:full_name,:uin,:gpa,:resume_url,:acknowledgement)
+        params.require(:formresponse).permit(:tamu_email,:full_name,:uin,:gpa,:resume_url,:acknowledgement)
     end
 end

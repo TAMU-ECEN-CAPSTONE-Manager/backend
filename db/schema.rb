@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_235037) do
   end
 
   create_table "formresponses" force: :cascade do |t|
-    t.string "form_submission_time"
     t.string "full_name"
     t.string "uin"
     t.string "tamu_email"
