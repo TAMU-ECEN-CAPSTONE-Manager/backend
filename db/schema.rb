@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 2021_12_09_235037) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "google_form_entries" force: :cascade do |t|
+    t.string "form_submission_time"
+    t.string "full_name"
+    t.string "uin"
+    t.string "tamu_email"
+    t.string "gpa"
+    t.string "resume_url"
+    t.string "acknowledgement"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "project_recos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
