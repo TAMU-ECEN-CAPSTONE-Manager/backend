@@ -1,0 +1,2 @@
+class Formresponse < ApplicationRecord
+end
