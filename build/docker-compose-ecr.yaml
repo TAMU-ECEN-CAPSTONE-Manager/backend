@@ -1,24 +1,5 @@
 version: '3.9'
 services:
-    postgres:
-        image: 685713582928.dkr.ecr.us-east-2.amazonaws.com/postgres
-        container_name: postgres
-        healthcheck:
-          test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
-          timeout: 45s
-          interval: 10s
-          retries: 10
-        environment:
-          - POSTGRES_USER=root
-          - POSTGRES_PASSWORD=password
-          - POSTGRES_DB=deployment
-          - APP_DB_USER=technoobs
-          - APP_DB_PASS=password
-          - APP_DB_NAME=production
-        # ports:
-        #   - "5432:5432"
-        volumes:
-          - local_pgdata:/var/lib/postgresql/data
     pgadmin:
       image: dpage/pgadmin4
       container_name: pgadmin4_container
@@ -29,23 +10,19 @@ services:
         - PGADMIN_DEFAULT_PASSWORD=admin
       volumes:
         - pgadmin-data:/var/lib/pgadmin
-      depends_on:
-        - postgres
     web:
         image: 685713582928.dkr.ecr.us-east-2.amazonaws.com/ecen-capstone-backend:latest
         container_name: backendapp
         ports:
             - 80:3000
         environment:
-            - DB_SERVER=postgres
+            - DB_SERVER=aa1v6psv8b522m5.cpzgpctgtyfz.us-east-2.rds.amazonaws.com
             - SECRET_KEY_BASE=06267e61829d574f7698dd038d689f28dc498b9088312a4064771bf4340ce3ccc32198c71f18565508a2deee13d56eda9ed287de3870910196e0b2580c5d44e2
             - POSTGRES_PORT=5432
             - APP_DB_USER=technoobs
             - AUTH_TOKEN_API=MWg0dDM6dzByazEwMQ==
-            - APP_DB_NAME=production
+            - APP_DB_NAME=postgres
             - APP_DB_PASS=password
-        depends_on:
-          - postgres
     mlengine:
       image: 685713582928.dkr.ecr.us-east-2.amazonaws.com/ml-engine:latest
       container_name: ml_container
@@ -53,5 +30,4 @@ services:
       depends_on:
         - web
 volumes:
-  local_pgdata:
   pgadmin-data:
