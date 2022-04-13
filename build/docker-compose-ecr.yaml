@@ -16,7 +16,7 @@ services:
         ports:
             - 80:3000
         environment:
-            - DB_SERVER=aa1v6psv8b522m5.cpzgpctgtyfz.us-east-2.rds.amazonaws.com
+            - DB_SERVER=aa1ikluqvfxsv2v.cpzgpctgtyfz.us-east-2.rds.amazonaws.com
             - SECRET_KEY_BASE=06267e61829d574f7698dd038d689f28dc498b9088312a4064771bf4340ce3ccc32198c71f18565508a2deee13d56eda9ed287de3870910196e0b2580c5d44e2
             - POSTGRES_PORT=5432
             - APP_DB_USER=technoobs
