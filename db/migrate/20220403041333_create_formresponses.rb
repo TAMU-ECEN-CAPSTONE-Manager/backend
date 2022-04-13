@@ -7,7 +7,7 @@ class CreateFormresponses < ActiveRecord::Migration[6.1]
       t.string :gpa
       t.string :resume_url
       t.string :acknowledgement
-
+      t.string :project_assigned
       t.timestamps
     end
   end

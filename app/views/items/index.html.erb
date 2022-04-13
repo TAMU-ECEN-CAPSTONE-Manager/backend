@@ -1,3 +1,5 @@
+<link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" data-turbolinks-eval=false src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 <h1>Inventory</h1>
 <% if @user_email != nil %>
 <% if @isAdmin %>
@@ -70,6 +72,52 @@
     <% end %>  
 <% end %>
 
+<% if @isAdmin %>
+    <h1>Student Project Assignments</h1>
+    <div id="student-assignment">
+
+    </div>
+<% end %>
+
 <% else %>
   <h1>SIGN IN!</h1>
 <% end %>
+
+<script>
+<% if @studentAssignments.any? %>
+var tabledataPreProcessed =  '<%= @studentAssignments.to_json %>'.replaceAll('&quot;','"');
+tabledata = JSON.parse(tabledataPreProcessed);
+var table = new Tabulator("#student-assignment", {
+    data:tabledata,           //load row data from array
+    layout:"fitColumns",      //fit columns to width of table
+    responsiveLayout:"hide",  //hide columns that dont fit on the table
+    tooltips:true,            //show tool tips on cells
+    addRowPos:"top",          //when adding a new row, add it to the top of the table
+    history:true,             //allow undo and redo actions on the table
+    pagination:"local",       //paginate the data
+    paginationSize:30,         //allow 7 rows per page of data
+    paginationCounter:"rows", //display count of paginated rows in footer
+    movableColumns:true,      //allow column order to be changed
+    resizableRows:true,       //allow row order to be changed
+    initialSort:[             //set the initial sort order of the data
+        {column:"name", dir:"asc"},
+    ],
+    columns:[                 //define the table columns
+        {title:"Name", field:"full_name", editor:"input", editable: false},
+        {title:"UIN", field:"uin", editor:"input", editable: false},
+        {title:"Project Assigned", field:"project_assigned", editor:"input", editable: false},
+        {title:"Email Address", field:"tamu_email", editor:"input", editable: false},
+        {title:"GPA", field:"gpa", editor:"input", editable: false},
+        {title:"Resume URL", field:"resume_url", editor:"input", editable: false},
+        {title:"Acknowledgement", field:"acknowledgement", editor:"input", editable: false},
+        {title:"Created At", field:"created_at", editor:"input", editable: false},
+        {title:"Updated At", field:"updated_at", editor:"input", editable: false},
+    ],
+});
+<% else %>
+var table = new Tabulator("#student-assignment", {
+    placeholder:"No Data Available", //display message to user on empty table
+});
+<% end %>
+
+</script>

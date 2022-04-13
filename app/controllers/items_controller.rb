@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @studentAssignments = Formresponse.all
     email = session[:user_email]
     @isAdmin = Admin.exists?(:email => email)
     vars = request.query_parameters

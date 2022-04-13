@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_235037) do
   create_table "formresponses" force: :cascade do |t|
     t.string "full_name"
     t.string "uin"
+    t.string "project_assigned"
     t.string "tamu_email"
     t.string "gpa"
     t.string "resume_url"
