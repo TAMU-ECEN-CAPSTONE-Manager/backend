@@ -77,6 +77,10 @@
     <div id="student-assignment">
 
     </div>
+    <% if @studentAssignments.any? %>
+        <br/>
+        <button id="download-csv">Download table as CSV</button>
+    <% end %>
 <% end %>
 
 <% else %>
@@ -85,6 +89,10 @@
 
 <script data-turbolinks-eval=false>
 <% if @studentAssignments.any? %>
+//trigger download of data.csv file
+document.getElementById("download-csv").addEventListener("click", function(){
+    table.download("csv", "student-assignment.csv");
+});
 var tabledataPreProcessed =  '<%= @studentAssignments.to_json %>'.replaceAll('&quot;','"');
 tabledata = JSON.parse(tabledataPreProcessed);
 var table = new Tabulator("#student-assignment", {
