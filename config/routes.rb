@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/studenthome'
   get 'welcome/sponsorprojectsubmission'
   get 'welcome/inventorymanagement'
+  get '/welcome/forum', to: redirect('https://ecencapstone.wixsite.com/capstoneforum')
   resources :items
   get '/items/:id', to: 'items#show'
   get '/items/:id/issue', to: 'items#issue', as: 'issue_item'

@@ -19,6 +19,7 @@
       <button><%= link_to 'FORM A TEAM', welcome_studenthome_path , class: 'btn' %></button>
       <button><%= link_to 'SPONSOR PROJECT SUBMISSION', welcome_sponsorprojectsubmission_path , class: 'btn' %></button>     
       <button><%= link_to 'INVENTORY AND PROJECT MANAGEMENT', items_path, class: 'btn' %></button>
+      <button><%= link_to 'Forum' , welcome_forum_path, class: 'btn' %></button>
       <% if @user_name %>
         <button><%= link_to "Sign Out", {:controller => :auth, :action => :signout}, class: 'btn' %></button>
         <h4>Welcome <%= @user_email %>!</h4>

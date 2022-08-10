@@ -13,4 +13,7 @@ class WelcomeController < ApplicationController
 
   def inventorymanagement
   end
+
+  def forum
+  end
 end
