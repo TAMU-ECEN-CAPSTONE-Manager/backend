@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'requestinvs/new'
   get 'requestinvs/borrowed'
   get 'welcome/about'
-  get 'welcome/studenthome'
+  get 'welcome/studenthome', to: redirect('https://docs.google.com/forms/d/e/1FAIpQLSe7VHldPsNy1Xf7vjNpEEeoZEF2joiQfguJA-V89TQZCL0Gbw/viewform?usp=sf_link')
   get 'welcome/sponsorprojectsubmission'
   get 'welcome/inventorymanagement'
   get '/welcome/forum', to: redirect('https://ecencapstone.wixsite.com/capstoneforum')
