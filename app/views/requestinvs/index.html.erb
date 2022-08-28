@@ -5,6 +5,9 @@
       <th id="name_header">Name</th>
       <th id="number_header">Quantity to Issue</th>
       <th id="email_header">Email</th>
+      <th id="team_name_header">Team Name</th>
+      <th id="cost_per_item_header">Cost per Item</th>
+      <th id="url_header">URL</th>
       <th id="show_header">List the Request</th>
     </tr>
   </thead>
@@ -14,6 +17,9 @@
         <td><%= i.name %></td>
         <td><%= i.number %></td>
         <td><%= i.email %></td>
+        <td><%= i.team_name %></td>
+        <td><%= i.cost_per_item %></td>
+        <td><%= i.url %></td>
         <td><%= link_to 'Take Action on the request' , requestinv_path(i) %></td>
       </tr>
     <% end %>

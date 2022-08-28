@@ -30,7 +30,7 @@ class RequestinvsController < ApplicationController
   private
 
   def requestinv_params
-    params.require(:requestinv).permit(:name, :number, :email)
+    params.require(:requestinv).permit(:name, :number, :email, :url, :team_name, :cost_per_item, :total_cost, :issued)
   end
 
   def current_request

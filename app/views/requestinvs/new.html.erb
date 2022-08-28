@@ -1,6 +1,10 @@
 <%= form_with model: @requestinv do |form| %>
-  <%= form.text_field :name, placeholder: "name" %>
-  <%= form.text_field :number, placeholder: "number" %>
-  <%= form.hidden_field :email, :value => session[:user_email] , placeholder: "email" %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_field :number, placeholder: "Quantity" %>
+  <%= form.hidden_field :email, :value => session[:user_email] , placeholder: "Email" %>
+  <%= form.text_field :team_name, placeholder: "Team name" %>
+  <%= form.text_field :cost_per_item, placeholder: "Cost per item" %>
+  <%= form.text_field :url, placeholder: "URL" %>
+  <%= form.hidden_field :issued, :value => false , placeholder: "Issued?" %>
   <%= form.submit %>
 <% end %>
